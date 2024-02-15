@@ -2,7 +2,7 @@
 <html lang="zh">  
 <head>  
 <meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">  
 <title>能量计数器</title>  
 <style>  
   body, html {  
@@ -38,39 +38,45 @@
   }  
   
   .button:active {  
-    background-color: #333;  
+    background-color: #68b36e;  
     color: #fff;  
   }  
+
+  #rand {
+    background-color: #333;  
+    color: #fff;  
+  }
+
 </style>  
 </head>  
 <body>  
   
 <div class="phone-keypad">  
-  <button class="button" onclick="highlight(this)">0</button>  
-  <button class="button" onclick="highlight(this)">1</button>  
-  <button class="button" onclick="highlight(this)">2</button>  
-  <button class="button" onclick="highlight(this)">3</button>  
-  <button class="button" onclick="highlight(this)">4</button>  
-  <button class="button" onclick="highlight(this)">5</button>  
-  <button class="button" onclick="highlight(this)">6</button>  
-  <button class="button" onclick="highlight(this)">7</button>  
-  <button class="button" onclick="highlight(this)">8</button>  
-  <button class="button" onclick="highlight(this)">9</button>  
-  <button class="button" onclick="highlight(this)">10</button>  
-  <button class="button" onclick="flipCoin()">币</button>  
-  <button class="button" onclick="rollDice(6)">D6</button>  
-  <button class="button" onclick="rollDice(20)">D20</button>  
-  <button class="button" onclick="rollDice(100)">D100</button>  
+  <button name="energy" class="button" onclick="highlight(this)">0</button>  
+  <button name="energy" class="button" onclick="highlight(this)">1</button>  
+  <button name="energy" class="button" onclick="highlight(this)">2</button>  
+  <button name="energy" class="button" onclick="highlight(this)">3</button>  
+  <button name="energy" class="button" onclick="highlight(this)">4</button>  
+  <button name="energy" class="button" onclick="highlight(this)">5</button>  
+  <button name="energy" class="button" onclick="highlight(this)">6</button>  
+  <button name="energy" class="button" onclick="highlight(this)">7</button>  
+  <button name="energy" class="button" onclick="highlight(this)">8</button>  
+  <button name="energy" class="button" onclick="highlight(this)">9</button>  
+  <button name="energy" class="button" onclick="highlight(this)">10</button>  
+  <button id="rand" class="button" onclick="flipCoin()">币</button>  
+  <button id="rand" class="button" onclick="rollDice(6)">D6</button>  
+  <button id="rand" class="button" onclick="rollDice(20)">D20</button>  
+  <button id="rand" class="button" onclick="rollDice(100)">D100</button>  
 </div>  
   
 <script>  
   function highlight(button) {  
-    var buttons = document.getElementsByClassName('button');  
+    var buttons = document.getElementsByName('energy');  
     for (var i = 0; i < buttons.length; i++) {  
       buttons[i].style.backgroundColor = '#ddd';  
       buttons[i].style.color = '#333';  
     }  
-    button.style.backgroundColor = '#333';  
+    button.style.backgroundColor = '#68b36e';  
     button.style.color = '#fff';  
   }  
 
