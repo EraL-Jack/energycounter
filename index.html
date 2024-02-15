@@ -1,5 +1,5 @@
 <!DOCTYPE html>  
-<html lang="en">  
+<html lang="zh">  
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
@@ -25,8 +25,8 @@
     display: flex;  
     justify-content: center;  
     align-items: center;  
-    min-width: 0; /* 允许按钮收缩到其内容的宽度 */  
-    height: 60px; /* 按钮高度 */  
+    min-width: 80px; /* 允许按钮收缩到其内容的宽度 */  
+    height: 80px; /* 按钮高度 */  
     background-color: #ddd;  
     color: #333;  
     border: none;  
@@ -71,8 +71,8 @@
   }  
 
   function showRandomNumber() {  
-    var randomNumber = Math.floor(Math.random() * 6) + 1; // 生成1到6之间的随机数  
-    alert(randomNumber); // 弹出提示框显示随机数  
+    var randomNumber = Math.floor(Math.random() * 100) + 1; // 生成1到100之间的随机数  
+    alert("结果为：" + randomNumber); // 弹出提示框显示随机数  
   }  
   
   // 获取最后一个按钮并修改其点击事件  
