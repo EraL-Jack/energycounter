@@ -1,5 +1,5 @@
 <!DOCTYPE html>  
-<html lang="en">  
+<html lang="zh">  
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
@@ -57,7 +57,10 @@
   <button class="button" onclick="highlight(this)">8</button>  
   <button class="button" onclick="highlight(this)">9</button>  
   <button class="button" onclick="highlight(this)">10</button>  
-  <button class="button" onclick="highlight(this)">骰</button>  
+  <button class="button" onclick="flipCoin()">币</button>  
+  <button class="button" onclick="rollDice(6)">D6</button>  
+  <button class="button" onclick="rollDice(20)">D20</button>  
+  <button class="button" onclick="rollDice(100)">D100</button>  
 </div>  
   
 <script>  
@@ -71,15 +74,16 @@
     button.style.color = '#fff';  
   }  
 
-  function showRandomNumber() {  
-    var randomNumber = Math.floor(Math.random() * 100) + 1; // 生成1到100之间的随机数  
-    alert("结果为：" + randomNumber); // 弹出提示框显示随机数  
+ // 新增的函数：掷骰子  
+  function rollDice(sides) {  
+    var result = Math.floor(Math.random() * sides) + 1;  
+    alert('掷出了 ' + result);  
   }  
   
-  // 获取最后一个按钮并修改其点击事件  
-  var lastButton = document.querySelector('.phone-keypad button:last-child');  
-  if (lastButton) {  
-    lastButton.onclick = showRandomNumber; // 将点击事件绑定到新的函数上  
+  // 新增的函数：抛硬币  
+  function flipCoin() {  
+    var result = Math.random() >= 0.5 ? '正面' : '反面';  
+    alert('硬币结果是 ' + result);  
   }  
 </script>  
   
