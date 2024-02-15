@@ -1,0 +1,70 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>能量计数器</title>  
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <style>  
+    body {
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .button {  
+      display: inline-block;  
+      width: 50px;  
+      height: 50px;  
+      background-color: #ddd;  
+      color: #333;  
+      border: none;  
+      border-radius: 5px;  
+      text-align: center;  
+      line-height: 50px;  
+      font-size: 20px;  
+      cursor: pointer;  
+      margin: 5px;  
+    }  
+  
+    .button.active {  
+      background-color: #333;  
+      color: #fff;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <div>  
+    <button id=0 class="button" onclick="highlight(0)">0</button>   
+    <button id=1 class="button" onclick="highlight(1)">1</button>  
+    <button id=2 class="button" onclick="highlight(2)">2</button>  
+  </div> 
+  <div>  
+    <button id=3 class="button" onclick="highlight(3)">3</button>  
+    <button id=4 class="button" onclick="highlight(4)">4</button>  
+    <button id=5 class="button" onclick="highlight(5)">5</button>  
+  </div>  
+  <div>  
+    <button id=6 class="button" onclick="highlight(6)">6</button>  
+    <button id=7 class="button" onclick="highlight(7)">7</button>  
+    <button id=8 class="button" onclick="highlight(8)">8</button> 
+  </div>  
+  <div>  
+    <button id=9 class="button" onclick="highlight(9)">9</button>  
+    <button id=10 class="button" onclick="highlight(10)">10</button>  
+  </div>  
+  
+  <script>  
+    function highlight(number) {  
+      // 移除所有按钮的高亮状态  
+      var buttons = document.getElementsByClassName('button');  
+      for (var i = 0; i < buttons.length; i++) {  
+        buttons[i].classList.remove('active');  
+      }  
+  
+      // 给指定按钮添加高亮状态  
+      var button = document.getElementById(number);  
+      if (button) {  
+        button.classList.add('active');  
+      }  
+    }  
+  </script>  
+</body>  
+</html>
