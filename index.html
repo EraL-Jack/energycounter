@@ -1,70 +1,99 @@
 <!DOCTYPE html>  
-<html>  
+<html lang="en">  
 <head>  
-  <title>能量计数器</title>  
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-  <style>  
-    body {
-      justify-content: center;
-      align-items: center;
-    }
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>能量计数器</title>  
+<style>  
+  body, html {  
+    height: 100%;  
+    margin: 0;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    font-family: 'Arial', sans-serif;  
+  }  
   
+  .phone-keypad {  
+    display: grid;  
+    grid-template-rows: repeat(4, 1fr);  
+    grid-template-columns: repeat(3, 1fr);  
+    gap: 16px; /* 增加按钮之间的间距 */  
+    padding: 10px; /* 保持容器内边距 */  
+    max-width: 100%; /* 使键盘宽度适应屏幕宽度 */  
+    box-sizing: border-box; /* 确保宽度包含padding */  
+  }  
+  
+  .button {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    width: 60px; /* 增加按钮宽度 */  
+    height: 60px; /* 增加按钮高度 */  
+    background-color: #ddd;  
+    color: #333;  
+    border: none;  
+    border-radius: 10px; /* 可选：增加圆角使按钮看起来更柔和 */  
+    font-size: 24px; /* 可选：增加字体大小 */  
+    cursor: pointer;  
+    box-sizing: border-box; /* 确保宽度和高度包含padding */  
+    padding: 10px; /* 增加按钮内部的空白区域 */  
+  }  
+  
+  .button:active {  
+    background-color: #333;  
+    color: #fff;  
+  }  
+  
+  /* 根据屏幕大小调整键盘布局 */  
+  @media (max-width: 600px) {  
+    .phone-keypad {  
+      grid-template-columns: repeat(2, 1fr);  
+    }  
     .button {  
-      display: inline-block;  
-      width: 50px;  
+      width: 50px; /* 在小屏幕上稍微减小按钮尺寸 */  
       height: 50px;  
-      background-color: #ddd;  
-      color: #333;  
-      border: none;  
-      border-radius: 5px;  
-      text-align: center;  
-      line-height: 50px;  
-      font-size: 20px;  
-      cursor: pointer;  
-      margin: 5px;  
     }  
+  }  
   
-    .button.active {  
-      background-color: #333;  
-      color: #fff;  
+  /* 在非常小的屏幕上使用单行布局 */  
+  @media (max-width: 400px) {  
+    .phone-keypad {  
+      grid-template-columns: 1fr;  
     }  
-  </style>  
+    .button {  
+      width: 40px; /* 在更小的屏幕上进一步减小按钮尺寸 */  
+      height: 40px;  
+    }  
+  }  
+</style>  
 </head>  
 <body>  
-  <div>  
-    <button id=0 class="button" onclick="highlight(0)">0</button>   
-    <button id=1 class="button" onclick="highlight(1)">1</button>  
-    <button id=2 class="button" onclick="highlight(2)">2</button>  
-  </div> 
-  <div>  
-    <button id=3 class="button" onclick="highlight(3)">3</button>  
-    <button id=4 class="button" onclick="highlight(4)">4</button>  
-    <button id=5 class="button" onclick="highlight(5)">5</button>  
-  </div>  
-  <div>  
-    <button id=6 class="button" onclick="highlight(6)">6</button>  
-    <button id=7 class="button" onclick="highlight(7)">7</button>  
-    <button id=8 class="button" onclick="highlight(8)">8</button> 
-  </div>  
-  <div>  
-    <button id=9 class="button" onclick="highlight(9)">9</button>  
-    <button id=10 class="button" onclick="highlight(10)">10</button>  
-  </div>  
   
-  <script>  
-    function highlight(number) {  
-      // 移除所有按钮的高亮状态  
-      var buttons = document.getElementsByClassName('button');  
-      for (var i = 0; i < buttons.length; i++) {  
-        buttons[i].classList.remove('active');  
-      }  
+<div class="phone-keypad">  
+  <button class="button" onclick="highlight(this)">0</button>  
+  <button class="button" onclick="highlight(this)">1</button>  
+  <button class="button" onclick="highlight(this)">2</button>  
+  <button class="button" onclick="highlight(this)">3</button>  
+  <button class="button" onclick="highlight(this)">4</button>  
+  <button class="button" onclick="highlight(this)">5</button>  
+  <button class="button" onclick="highlight(this)">6</button>  
+  <button class="button" onclick="highlight(this)">7</button>  
+  <button class="button" onclick="highlight(this)">8</button>  
+  <button class="button" onclick="highlight(this)">9</button>  
+  <button class="button" onclick="highlight(this)">10</button>  
+</div>  
   
-      // 给指定按钮添加高亮状态  
-      var button = document.getElementById(number);  
-      if (button) {  
-        button.classList.add('active');  
-      }  
+<script>  
+  function highlight(button) {  
+    var buttons = document.getElementsByClassName('button');  
+    for (var i = 0; i < buttons.length; i++) {  
+      buttons[i].style.backgroundColor = '#ddd';  
+      buttons[i].style.color = '#333';  
     }  
-  </script>  
-</body>  
-</html>
+    button.style.backgroundColor = '#333';  
+    button.style.color = '#fff';  
+  }  
+</script>  
+  
+</body>
